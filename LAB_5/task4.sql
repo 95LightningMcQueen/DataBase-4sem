@@ -1,4 +1,4 @@
-BACKUP DATABASE User_Actions TO DISK = 'D:\Chugun\vsc\bd\LAB_5\User_Actions_backup.bak'
+BACKUP DATABASE User_Actions TO DISK = 'D:\vsc\bd\LAB_5\User_Actions_backup.bak'
 GO
 USE MASTER
 GO
@@ -26,5 +26,5 @@ END
 GO
 
 EXEC SP_RESTORE_USER_ACTIONS
-    @BACKUP_PATH      = 'D:\Chugun\vsc\bd\LAB_5\User_Actions_backup.bak',
-    @DATA_DESTINATION = 'D:\Chugun\vsc\bd\LAB_5'
+    @BACKUP_PATH      = 'D:\vsc\bd\LAB_5\User_Actions_backup.bak',
+    @DATA_DESTINATION = 'D:\vsc\bd\LAB_5'

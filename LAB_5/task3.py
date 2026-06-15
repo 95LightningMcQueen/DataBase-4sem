@@ -28,11 +28,7 @@ for engine in engines:
 
 def main():
     print('START')
-    all_dfs = []
-    for i in range(12):
-        shard = pd.read_sql('SELECT USERNAME, USER_ACTION, ACTION_DATE, ACTION_TIME, ACTION_RESULT FROM USER_LOGS', engines[i])
-        all_dfs.append(shard)
-    df = pd.concat(all_dfs, ignore_index=True)
+    df = pd.read_sql('SELECT USERNAME, USER_ACTION, ACTION_DATE, ACTION_TIME, ACTION_RESULT FROM USER_LOGS', engines[0])
     df.columns = ['username', 'user_action', 'action_date', 'action_time', 'action_result']
     df['shard'] = df.index % 12
     print('прочитано всего ' + str(len(df)) + ' записей')
